@@ -5,9 +5,24 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #323232 !important;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.container {
+  margin-top: 30px;
+}
+
+.app {
+  padding: 5px;
+  background: #dc9fed;
+}
+
+.input {
+  padding: 10px;
+  background: #9fa5ed !important;
 }
