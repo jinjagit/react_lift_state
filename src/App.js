@@ -1,10 +1,11 @@
 import { useState } from 'react';
+import { Input } from './Input';
 
 function App() {
-  const [name, setName] = useState('<your name>');
-  const handleChange = (name) => {
-    setName(name);
-  };
+  const [name, setName] = useState('<name>');
+  const [age, setAge] = useState('<age>');
+  const handleNameChange = (name) => setName(name);
+  const handleAgeChange = (age) => setAge(age);
 
   return (
     <div className="container app">
@@ -12,32 +13,14 @@ function App() {
         <h3>App component [parent]</h3>
       </div>
       <div className='row'>
-        <h1>My name is {name}</h1>
+        <h1>My name is {name}, and I am {age} years old.</h1>
       </div>
-      <form className='row g-3'>
-        
-          <NameInput onChange={handleChange} />
-           
-          <NameInput onChange={handleChange} />
-
+      <form className='row g-3'>      
+        <Input onChange={handleNameChange} label={'name'} />           
+        <Input onChange={handleAgeChange} label={'age'} />
       </form>
     </div>
   );
 }
-
-const NameInput = ({ onChange, name }) => {
-  return (
-    <div className='col-lg-6 card input'>
-      <h3>Input component [child of App]</h3>
-      <label htmlFor='name' className='form-label'>Name</label>
-      <input
-        className='form-control'
-        placeholder='Name'
-        value={name}
-        onChange={e => onChange(e.target.value)}
-      />
-    </div>  
-  )
-};
 
 export default App;
